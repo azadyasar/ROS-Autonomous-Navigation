@@ -1,0 +1,53 @@
+# Parameters for octomap_listener
+
+# frequency to update OcTree, default is 20
+octomap_update_freq: 0.1
+
+# frequency to update odometry of the robot, default is 10
+odometry_update_freq: 2
+
+# name of the topic to advertise <geometry_msgs::Twist>, default is diff_car/cmd_vel
+twist_topic_name: diff_car/cmd_vel
+
+# the threshold angle(between robot's direction and the target direction)
+# to stop turning the robot default is 0.4 (in radians)
+radians_to_turn_threshold: 0.3
+
+# the angular speed of the robot when turning towards target direction default is 1.0
+yaw_rotation_speed: 1.0
+
+# resolution to divide arena into vertices e.g., 1: 0.5x0.5 sized squares -> (0,0), (1,0), (1,1), etc. 
+# 0.5: 0.25x0.25 size squares -> (0,0), (0.5,0), (0.5,0), etc. 
+vertex_resolution: 0.25
+
+# threshold for height differences. An edge will be constructed if the diff between two vertices
+# is <= THRESHOLD_HEIGHT
+threshold_height: 0.051
+
+# threshold distance to omit adjusting robot's direction
+threshold_distance: 0.2
+
+# height of ground
+ground_height: 0.275
+
+# save adjacency list to data folder
+save_adj_list: false
+
+#diamond size
+diamond_size: 4
+
+# topic name to subscribe for octomap default is /octomap_binary
+octomap_topic_name: /octomap_binary
+
+# topic name to subscribe for geometry_msgs::PoseStamped (Goal) default is /move_base_simple/goal
+goal_topic_name: /move_base_simple/goal
+
+# topic name to subscribe for odometry of the robot default is /diff_car/odom
+odom_topic_name: /diff_car/odom
+
+# move_base goal topic name to publish goals to move_base node
+move_base_goal_name: /move_base_simple1/goal
+
+# Action server-client name to send goals and receive result from move_base
+action_client_name: /diff_car/move_base
+

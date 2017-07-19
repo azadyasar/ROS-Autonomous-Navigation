@@ -1,0 +1,6 @@
+.DS*
+devel*
+build*
+log*
+data*
+*catkin*

@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="octomap_listener" type="octomap_listener_v1" name="octomap_listener_node" output="screen">
+    <rosparam file="$(find octomap_listener)/params/basic_params.yaml" command="load" />
+  </node>
+</launch>
