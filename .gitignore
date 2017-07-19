@@ -4,3 +4,4 @@ build*
 log*
 data*
 *catkin*
+*.zip
